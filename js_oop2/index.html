@@ -3,28 +3,46 @@
 <head>
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<script src="https://code.jquery.com/jquery-3.0.0.js"></script>
-	<script type="text/javascript" src="exercises/modal.js"></script>
-	<script type="text/javascript" src="exercises/input.js"></script>
-	<script type="text/javascript" src="exercises/colorsquare.js"></script>
-	<script type="text/javascript" src="test.js" defer></script>
+	<script src="jquery3.1.0.js"></script>
+	<script type="text/javascript" src="exercises/counterbasic.js"></script>
+	<script type="text/javascript" src="exercises/countermedium.js"></script>
+	<script type="text/javascript" src="exercises/countercallback.js"></script>
+	<script type="text/javascript" src="exercises/namecapper.js"></script>
+	<script type="text/javascript" src="exercises/christmaslight.js"></script>
+    <link rel="stylesheet" type="text/css" href="tests/tests.css">
+	<script type="text/javascript" src="tests/tests_core.js"></script>
+	<script type="text/javascript" src="tests/tests.js"></script>
+
+	<script src="main_tests.js"></script>
+	<!-- <script type="text/javascript" src="main_normal.js" defer></script> -->
 </head>
 <body>
-<div id="displayArea">
+<div id="exampleArea">
+	<div id="counterArea" class="hasHeaderBar">
+		<div id="counter1Area" class="hasHeaderBar headerSubBar">
+			<div id="counter1" class="counter">0</div>
+		</div>
+		<div id="counter2Area" class="hasHeaderBar headerSubBar">
+
+		</div>
+		<div id="counter3Area" class="hasHeaderBar headerSubBar">
+
+		</div>
+	</div>
+	<div id="nameDisplay" class="hasHeaderBar">
+			<div id="name1Area" class="hasHeaderBar headerSubBar">
+
+			</div>
+			<div id="name2Area" class="hasHeaderBar headerSubBar">
 	
-</div>
-<div id="modalShadow"></div>
-<div id="modalBody">
-	<div id="modalMessage">modal message</div>
-</div>
-<div id="inputTest1" class="inputContainer">
-	Test Input 1: <input type="text" name="testInput" id="testInput">
-</div>
-<div id="inputTest2" class="inputContainer">
-	Test Input 2: <input type="text" name="testInput2" id="testInput2">
-</div>
-<div id="colorSquareArea">
+			</div>
+			<div id="name3Area" class="hasHeaderBar headerSubBar">
 	
+			</div>
+	</div>
+	<div id="lightDisplay" class="hasHeaderBar">
+		<button id="cycleAllLights">change all</button>
+	</div>
 </div>
 </body>
 </html>

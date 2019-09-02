@@ -1,59 +1,93 @@
 
-#displayArea{
+body{
 	height: 100vh;
-	width: 100vw;
 }
-.header{
-	color: blue;
-	font-weight: bold;
-}
-.message {
-	color: green;
-}
-.error{
-	color: black;
-	background-color: red;
-}
-
-/* modal test css */
-
-#modalShadow{
-	position: fixed;
-	left: 0;
-	top: 0;
-	height: 100vh;
-	width: 100vw;
-	background-color: black;
-	opacity: .4;
-}
-#modalBody{
-	position: fixed;
-	left: 50%;
-	top: 50%;
-	min-height: 30vmin;
-	min-width: 30vmin;
-	transform: translate(-50%, -50%);
-	background-color: white;
+#exampleArea{
 	display: flex;
+	height: 100%;
 }
-#modalMessage{
-	margin: auto auto;
-}
-/* input test css */
-.inputError{
-	color: red;
-	position: absolute;
-}
-.inputContainer{
-	margin: 10px 0;
-}
-#colorSquareArea{
-	display: flex;
-	justify-content: space-around;
-}
-.colorSquare{
-	height: 20vmin;
-	width: 20vmin;
+.hasHeaderBar {
+	width: 100%;
 	border: 1px solid black;
+	box-sizing: border-box;
+	position: relative;
+	padding-top: 1em;
+}
+.hasHeaderBar::before{
+	width: 100%;
+	position: absolute;
+	top: 0%;
+	background-color: black;
+	color: white;
+	text-align: center;
+}
+.headerSubBar::before{
+	background-color: lightblue;
+	font-size: 80%;
+}
+#counterArea::before{
+	content: 'Counter';
+}
+#nameDisplay::before{
+	content: 'Name Display';
+}
+#lightDisplay::before{
+	content: 'light Display';
+}
+#counter1Area::before{
+	content: 'basic counter';
+}
+#counter2Area::before{
+	content: 'medium counter';
+}
+#counter3Area::before{
+	content: 'callback counter';
+}
+.counter{
+	height: 5vmin;
+	width: 5vmin;
+	text-align: center;
+	line-height: 5vmin;
+	margin: 2vmin;
+	background-color: pink;
+	cursor: pointer;
+}
+#nameDisplay .headerSubBar::before{
+	background-color: lightgreen;
+	color: black;
+}
+#name1Area::before{
+	content: 'name 1';
+}
+#name2Area::before{
+	content: 'name 2';
+}
+#name3Area::before{
+	content: 'name 3';
+}
+.nameHolder{
+	display: inline-block;
+	padding: 0 1vmin;
+	min-height: 5vmin;
+	min-width: 5vmin;
+	text-align: center;
+	line-height: 5vmin;
+	margin: 2vmin;
+	background-color: lavender;
+	cursor: pointer;
+}
+.christmasLight{
+	float: left;
+	height: 10vmin;
+	width: 5vmin;
+	border-radius: 100% 100% 75% 75%;
+	background-color: lightgrey;
+	margin: 1vmin 3vmin
 }
 
+#cycleAllLights{
+	position: absolute;
+	bottom: 20%;
+	left: 50%;
+	transform: translateX(-50%);
+}
