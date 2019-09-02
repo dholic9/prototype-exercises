@@ -2,7 +2,7 @@
 
 ### Featureset 1 - counter basic
 
-![counter example](assets/counterdemo.gif)
+![counter example](assets/counterdemo.gif) (please note that this shows all 3 counters running)
 
 - This counter displays a number in an existing dom element, and can be clicked on to increment the value in the dom element
 
@@ -112,7 +112,7 @@
 
 ### Featureset 3 - counter callback
 
-- The object, like the previous two, increases a dom element's value by 1 whenever the element is clicked on.  This one, however, includes an callback function to notify other code that the element has been clicked on
+- This object, like the previous two, increases a dom element's value by 1 whenever the element is clicked on.  This one, however, includes a callback function to notify other code that the element has been clicked on
 
 1. modify exercises/countercallback.js
 1. create the following methods
