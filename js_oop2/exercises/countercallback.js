@@ -1,32 +1,25 @@
 
 
 class CounterCallback{
-    constructor( initialValue, clickCallback){
-        this.dom = null;
-        this.clickCallback = clickCallback;
-        this.handleClick = this.handleClick.bind( this );
-        this.value = initialValue;
+    constructor( ){
+
     }
-    addClickHandler(){
-        this.dom.click( this.handleClick );
+    addClickHandler( ){
+
     }
-    handleClick(){
-        this.clickCallback( this );
-        this.increment();
+    handleClick( ){
+
     }
-    getValue(){
-        return this.value;
+    getValue( ){
+
     }
-    increment(){
-        this.value++;
-        this.update();
+    increment( ){
+
     }
-    update(){
-        this.dom.text( this.value );
+    update( ){
+
     }
-    render(){
-        this.dom = $("<div>").addClass('counter');
-        this.update();
-        return this.dom;
+    render( ){
+
     }
 }

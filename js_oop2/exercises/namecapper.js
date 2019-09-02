@@ -1,49 +1,29 @@
 
 
 class NameCapper{
-    constructor( name ){
-        this.handleClick = this.handleClick.bind( this );
-        this.name = name;
-        this.mode = null;
-        this.dom = null;
-        this.lowerCaseName();
+    constructor(  ){
+
     }
-    handleClick(){
-        if(this.mode==='lower'){
-            this.upperCaseName();
-        } else {
-            this.lowerCaseName();
-        }
-        this.update();
+    handleClick( ){
+
     }
-    upperCaseName(){
-        this.name = this.name.toUpperCase();
-        this.mode = 'upper';
+    upperCaseName( ){
+
     }
-    lowerCaseName(){
-        this.name = this.name.toLowerCase();
-        this.mode = 'lower';
+    lowerCaseName( ){
+
     }
-    update(){
-        this.dom.text( this.name );
+    update( ){
+
     }
-    getName(){
-        return this.name;
+    getName( ){
+
     }
-    setName( newName ){
-        this.name = newName;
-        this.lowerCaseName();
-        this.update();
-        if(this.name===newName.toLowerCase()){
-            return true;
-        }
-        return false;
+    setName(  ){
+
     }
-    render(){
-        this.dom = $("<div>").addClass('nameHolder');
-        this.dom.click( this.handleClick );
-        this.update();
-        return this.dom;
+    render( ){
+
     }
 
 }

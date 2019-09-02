@@ -1,25 +1,19 @@
 
 
 class CounterBasic{
-    constructor( initialValue, targetDom ){
-        this.dom = $(targetDom);
-        this.handleClick = this.handleClick.bind( this );
-        this.value = initialValue;
-        this.addClickHandler();
-        this.update();
+    constructor( ){
+
     }
-    addClickHandler(){
-        this.dom.click( this.handleClick );
+    addClickHandler( ){
+
     }
-    handleClick(){
-        console.log('test');
-        this.increment();
+    handleClick( ){
+
     }
-    increment(){
-        this.value++;
-        this.update();
+    increment( ){
+
     }
-    update(){
-        this.dom.text( this.value );
+    update( ){
+
     }
 }

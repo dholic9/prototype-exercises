@@ -1,32 +1,17 @@
 
 class ChristmasLight{
-    constructor( colors ){
-        this.handleClick = this.handleClick.bind( this );
-        this.colors = colors;
-        this.dom = null;
-        this.colorIndex = 0;
+    constructor(  ){
+
     }
-    cycleColor(){
-        this.colorIndex++;
-        if( this.colorIndex === this.colors.length ){
-            this.colorIndex=0;
-        }
+    cycleColor( ){
+
     }
-    displayColor(){
-        this.dom.css('background-color', this.colors[ this.colorIndex ]);
+    displayColor( ){
     }
-    handleClick(){
-        this.cycleColor();
-        this.displayColor();
+    handleClick( ){
+
     }
-    render(){
-        this.dom = $("<div>", {
-            class: 'christmasLight',
-            on: {
-                click: this.handleClick
-            }
-        });
-        this.displayColor();
-        return this.dom;
+    render( ){
+
     }
 }
