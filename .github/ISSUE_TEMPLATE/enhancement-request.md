@@ -11,7 +11,7 @@ assignees: codingcodymiller
 A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
 
 **Is your enhancement related to an existing feature? Which one?**
-Yes or No. If No, describe existing feature from a student's perspective.
+Yes or No. If Yes, describe existing feature from a student's perspective.
 
 **Describe the solution you'd like**
 A clear and concise description of what you want to happen.
