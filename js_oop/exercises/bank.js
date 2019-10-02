@@ -1,4 +1,20 @@
-
+/*
+**	constructor **
+* The constructor will:
+* 	- Contain two properties:
+* 	  - this.bankName - which will contain the name of the bank that is passed into the constructor
+*       as an argument when the class is instantiated.
+*       - Note - Instantiation occurs when the "new" keyword is used on a class - ex: var bank = new Bank("Washington Mutual")
+*     - this.accounts - which will be used to store an object literal which contains all "Accounts" instantiated by the Bank class.
+*       - The initial value will be an empty object literal.
+** Specifications **
+*   - Takes a single parameter:
+*     - bankName
+*   - Within the constructor:
+*     - Create two properties:
+*       - this.operator - which will have an initial value of null.
+*       - this.numbers - which will have an initial value of an empty array.
+*/
 
 class Bank{
 	constructor( bankName){
@@ -40,7 +56,7 @@ class Bank{
 		//if the account is not empty, returns
 			//'account is not empty'
 		//otherwise deletes the account from the constructor storage
-		//returns 
+		//returns
 			'account <accountNumber> deleted'
 
 	}
