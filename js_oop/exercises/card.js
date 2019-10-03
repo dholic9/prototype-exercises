@@ -12,6 +12,21 @@ class Card{
 	}
 }
 
+/*
+**	constructor **
+* The constructor will:
+* 	- Contain two properties:
+* 	  - this.operator - which will contain the current operator being used to calculate.
+*     - this.numbers - which will be used to store an array of two number values which will be used
+*		along with the current operator to calculate a result.
+*       - The initial value will be an empty array.
+** Specifications **
+*   - Takes zero parameters.
+*   - Within the constructor:
+*     - Create two properties:
+*       - this.operator - which will have an initial value of null.
+*       - this.numbers - which will have an initial value of an empty array.
+*/
 class Deck{
 	constructor(){
 		//takes in nothing
