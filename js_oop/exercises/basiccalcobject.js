@@ -1,3 +1,5 @@
+//JS-Docs for the "Calculator" class methods
+
 /*
 **	constructor **
 * The constructor will:
@@ -81,6 +83,6 @@ class Calculator{
 
 	}
 	calculate(){
-	
+
 	}
 }

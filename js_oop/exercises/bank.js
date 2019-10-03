@@ -1,3 +1,6 @@
+//JS-Docs for the "Bank" class methods
+
+
 /*
 **	constructor **
 * The constructor will:
