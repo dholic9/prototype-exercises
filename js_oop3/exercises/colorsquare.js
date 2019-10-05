@@ -84,13 +84,16 @@
 *       - Reset the color index to zero and update the background color for the ColorSquare based on the new color index.
 *   - Check if the ColorSquare currently has a neighbor ColorSquare stored in the constructor.
 *     - If it does:
-*       - Call the handleClick method on the neighbor ColorSquare.
+*       - Call the handleClick method on the stored neighbor ColorSquare.
 ** Specifications **
 *   - Takes no parameters:
 ** Considerations **
 *   - How do you check if the color index can be incremented without moving beyond the end of the array?
 *   - How do you update the background color of the ColorSquare?
 *   - Why do you have to confirm that the "neighbor" ColorSquare exists?
+*   - Since this function is called by an event handler, do you need to bind this?
+*     - Example of binding this for a method in the constructor:
+*       - this.functionName = this.functionName.bind(this);
 */
 
 /*
@@ -99,7 +102,7 @@
 * 	- Handle the functionality for updating the background color for the ColorSquare.
 ** Specifications **
 *   - Takes one parameter:
-*    - newColor - Which is the index of the color in the colors array to set the ColorSquare background color to.
+*    - newColor - Which will receive the index of the color in the colors array to set the ColorSquare background color to.
 ** Considerations **
 *   - What modifications do you have to make to the "handleClick" method now that you have this method?
 *   - What method will you call this method from?
