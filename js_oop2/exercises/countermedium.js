@@ -1,4 +1,4 @@
-//JS-Docs for the "CounterMedium class methods
+//JS-Docs for the "CounterMedium" class methods
 
 
 /*
@@ -22,7 +22,8 @@
 **	render **
 * This method will:
 * 	- Create a Div element.
-*   - Store the created div in the constructor..
+*   - Add a class of "counter" to the Div element
+*   - Store the created div in the constructor.
 *   - Call the update method in order to update the DOM counter text.
 *     - This will be very similar to the method you built for the previous counter.
 *   - Return the created DOM element.
@@ -85,19 +86,20 @@ class CounterMedium{
     constructor(  ){
 
     }
+    render( ){
+
+    }
     addClickHandler( ){
-
-    }
-    handleClick( ){
-
-    }
-    increment( ){
 
     }
     update( ){
 
     }
-    render( ){
+    increment( ){
 
     }
+    handleClick( ){
+
+    }
+
 }
