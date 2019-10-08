@@ -111,9 +111,9 @@
 */
 
 /*
-**	deposit **
+**	withdraw **
 * This method will:
-* 	- Removes money from an existing account.
+* 	- Remove money from an existing account.
 ** Specifications **
 *   - Takes two parameters.
 *     - accountNumber - which will be the account number to add money to.
