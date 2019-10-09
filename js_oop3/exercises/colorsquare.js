@@ -1,87 +1,137 @@
+//JS-Docs for the "ColorSquare" class methods
 
+/*
+**	constructor **
+* The constructor will:
+* 	- Contain five properties:
+* 	  - this.availableColors - Which will store an array of colors.
+*     - this.colorIndex - Which will store a numeric value.
+*     - this.colorClass - Which will be used to store a CSS class.
+*     - this.element - Which will be used to store a DOM element - initial value is null.
+*     - this.rightNeighbor - Which will be used to store an object literal reference to
+*        another instantiated ColorSquare class - Initial value set to null.
+** Specifications **
+*   - Takes three parameters:
+*     - colors - which will receive an array of colors as an argument when the class is instantiated.
+*     - currentColor - which will receive a numeric value as an argument when the class is instantiated.
+*     - colorClass - which will receive a CSS class as an argument when the class is instantiated.
+*   - Within the constructor:
+*     - Create the five properties listed above.
+*     - Assign the values contained in the parameters into their associated properties.
+*     - Binds "this" for any methods that require it for functionality.
+** Considerations **
+*   - What values are contained in the parameters of the constructor?
+*   - Why do you think the constructor is storing references to other instantiated objects?
+*   - Why do you have to bind "this" for methods that are called by event handlers?
+*/
+
+/*
+**	render **
+* This method will:
+* 	- Create a Div element, store it in the constructor at the appropriate property,
+*     and assign it the following attributes / functionality:
+*     - The CSS class stored in the the constructor.
+*     - A click handler which will call a method "handleCLick" - which you will be constructing.
+*     - A background color in the stored color array at the stored color index.
+*   - Return the created Div element.
+** Specifications **
+*   - Takes no parameters:
+** Considerations **
+*  - What property in the constructor should the element be stored?
+*  - What properties in the constructor contain the color array and the color index?
+*  - Where is the CSS class you need to use stored?
+*/
+
+/*
+**	set neighbor **
+* Read the documentation on Getters and Setters!!!: https://www.w3schools.com/js/js_object_accessors.asp
+* This method "setter" will:
+* 	- Confirm that the argument passed into the "neighborObject" parameter contains an instance of the ColorSquare class.
+*   - If it does:
+*     - Assign the value of the neighborObject parameter to the appropriate property in the constructor.
+*     - Return true.
+*   - If it does not:
+*     - Return false
+** Specifications **
+*   - Takes one parameter:
+*     - neighborObject - Which should contained a reference to another instance of the ColorSquare class.
+** Considerations **
+*  - How do you confirm that an object is the instance of a particular class?
+*    - Note: Read this documentation: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/instanceof
+*  - What is the advantage of using a getter/setter rather than a regular method?
+*  - Where should you store the value contained in the neighborObject parameter?
+*/
+
+/*
+**	get neighbor **
+* Worth looking at again!!! : https://www.w3schools.com/js/js_object_accessors.asp
+* This method "getter" will:
+* 	- Returns the stored neighbor object.
+** Specifications **
+*   - Takes no parameters:
+** Considerations **
+*   - Where is the neighbor stored?
+*/
+
+/*
+**	handleClick **
+* This method will:
+* 	- Check the object's stored color index to see if it can be increased by one without
+*     incrementing beyond the length of the colors array.
+*     - If it can:
+*       - Increment the color index by 1 and update the background color for the ColorSquare based on the new color index.
+*     - If it can't:
+*       - Reset the color index to zero and update the background color for the ColorSquare based on the new color index.
+*   - Check if the ColorSquare currently has a neighbor ColorSquare stored in the constructor.
+*     - If it does:
+*       - Call the handleClick method on the stored neighbor ColorSquare.
+** Specifications **
+*   - Takes no parameters:
+** Considerations **
+*   - How do you check if the color index can be incremented without moving beyond the end of the array?
+*   - How do you update the background color of the ColorSquare?
+*   - Why do you have to confirm that the "neighbor" ColorSquare exists?
+*   - Since this function is called by an event handler, do you need to bind this?
+*     - Example of binding this for a method in the constructor:
+*       - this.functionName = this.functionName.bind(this);
+*/
+
+/*
+**	changeColor **
+* This method will:
+* 	- Handle the functionality for updating the background color for the ColorSquare.
+** Specifications **
+*   - Takes one parameter:
+*    - newColor - Which will receive the index of the color in the colors array to set the ColorSquare background color to.
+** Considerations **
+*   - What modifications do you have to make to the "handleClick" method now that you have this method?
+*   - What method will you call this method from?
+*   - What value do you have to pass in as an argument when this method is called?
+*/
 
 class ColorSquare{
-	/*
-	arguments: 
-		available colors (array), 
-		the current color index (number)
-		class to make the future dom element in render (string)
-	returns:
-		nothing
-	notes:
-		will need to store the available colors, dom element class, color index, and probably
-		the dom element that belongs to it, the neighbor to the right (which should start at null), and
-		you'll need to bind the handleClick method to this object:
-			this.handleClick = this.handleClick.bind(this)
-	*/
+
 	constructor( ){
 	}
-	/*setter function for the property neighbor
-	new, somewhat limited support: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/set
-	arguments: 
-		newNeighbor (ColorSquare), the color square physically to the right of this square
-	returns: 
-		true / false, depending on success
-	notes:
-		make sure it only sets the neighbor if it is the right class constructor (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/constructor)
-		if it is the right constructor, set the neightbor
-	*/
-	set neighbor( neighborObject ){
 
-	}
-	/* getter function for the property neighbor
-	new, somewhat limited support: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get
-	arguments: 
-		nothing
-	returns: 
-		this object's property of the neighbor to the right
-	*/
-	get neighbor(){
-
-	}
-	/*
-	click handler for this dom element
-		arguments: 
-			nothing
-		returns: 
-			nothing
-		notes:
-			check the current index position of this element in the color array.  move it to the next one
-			if that move would go past the end of the color array, go to the 0th position instead
-			then change the color of this square to the new color
-			go to your right neighbor's object, and invoke its handleClick method, as well
-			yes, this will cause a cascade of all the elements to the right
-			make sure the rightNeighbor is something!  the rightmost element won't have a neighbor
-		*/
-	handleClick(){
-
-	}
-	/*
-	change the color of the current element
-	arguments:
-		the color to change the current element to
-	returns:
-		nothing
-	notes:
-		changes the current object's dom element's backgound color to the argument color
-	*/
-	changeColor(  ){
-
-	}
-	/*
-	render / generate the dom element for the current object 
-	arguments: 
-		nothing
-	returns:
-		the dom element generated by the function
-	notes:
-		create a dom element, attach it to a property on this object for a later time
-		add a class to the element based on the class stored from the constructor
-		add a click handler that calls the handleClick method of this object
-		add the background color of the dom element to the currently chosen color (based on the passed in index of the constructor)
-		return the dom element that was generated. 
-	*/
 	render(){
 
 	}
+
+	set neighbor(){
+
+	}
+
+	get neighbor(){
+
+	}
+
+	handleClick(){
+
+	}
+
+	changeColor(  ){
+
+	}
+
 }

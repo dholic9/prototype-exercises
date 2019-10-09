@@ -1,37 +1,95 @@
 
+//JS-Docs for the "Modal" class methods
+
+/*
+**	constructor **
+* The constructor will:
+* 	- Contain Four properties:
+* 	  - This.shadow - Which is the modal's DOM element "shadow".
+*     - This.body - Which is the modal's main body element.
+*     - This.message - Which will contain the DOM element with the modal message.
+*     - This.onClose - Which will be used by the tester to hold a callback function.
+*       - The initial value of this.onClose will be null.
+** Specifications **
+*   - Takes three parameters:
+*     - shadowElement - which will receive a DOM element as an argument when the class is instantiated.
+*     - bodyElement - which will receive a DOM element as an argument when the class is instantiated.
+*     - messageElement - which will receive a DOM element as an argument when the class is instantiated.
+*   - Within the constructor:
+*     - Create the four properties listed above.
+*     - Assign the values contained in the parameters into their associated properties.
+** Considerations **
+*   - Why does the modal need access to DOM element references?
+*/
+
+/*
+**	init **
+* This method will:
+* 	- Call the modal's hide method.
+*   - Remove all current click handlers from the element stored in the this.shadow property.
+*   - Add a click handler to the element stored in the this.shadow property which will call the
+*     callback function stored in the this.onClose property on click.
+*   - Add another click handler to the same element, and give it the modal's hide method as a
+*     callback. (Don't forget to bind "this" on the hide callback)
+** Specifications **
+*   - Takes no parameters:
+** Considerations **
+*   - Why does the "hide" callback need to have "this" bound?
+*/
+
+/*
+**	show **
+* This method will:
+* 	- Use the jQuery .show() method to show the shadow and body elements.
+** Specifications **
+*   - Takes no parameters:
+** Considerations **
+*   - How can the .show() method be used on the correct DOM elements?
+*/
+
+
+/*
+**	updateContents **
+* This method will:
+* 	- Update the text in the message element.
+** Specifications **
+*   - Takes one parameter:
+*     - modalMessage - which will be given a string as an argument.
+** Considerations **
+*   - What jQuery method is useful for setting the text in elements?
+*/
+
+/*
+**	hide **
+* This method will:
+* 	- Use the jQuery .hide() method to hide the shadow and body elements.
+** Specifications **
+*   - Takes no parameters:
+** Considerations **
+*   - How can the .hide() method be used on the correct DOM elements?
+*/
+
+
 
 class Modal{
-	//constructor takes in 3 arguments: the modal shadow dom element, the modal body dom element, and the modal message dom element
-	//Modal will have a property called onClose that will eventually be set to a callback set by the outside
+
 	constructor( ){
 
 	}
-	//takes in no arguments.
-	//returns nothing
-	//shows the given modal shadow and the given modal body
-	show(){
-		
-	}
-	//takes in no arguments
-	//returns nothing
-	//hides the given modal shadow and the given modal body
-	hide(){
-		
-	}
-	//takes in a string that it then puts inside the text of the modal message element
-	//returns nothing
-	updateContents(  ){
-	
-	}
-	//takes in no arguments
-	//returns nothing
-	//hides the modal, removes all existing click handlers from the modal shadow
-		//and adds 2 click handlers to the modal shadow: 
-			//one that calls whatever callback was assigned to this object's onClose handler
-			//calls this object's hide method.  Make sure to use bind to make it correctly bind to the object
-				//this.FUNCTIONNAME.bind( this )
-			//otherwise it won't work correctly
+
 	init(){
+
+	}
+
+	show(){
+
+	}
+
+	updateContents(){
+
+	}
+
+	hide(){
 
 	}
 
