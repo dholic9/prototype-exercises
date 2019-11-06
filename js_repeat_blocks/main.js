@@ -15,11 +15,14 @@ var students = {
 
 function initializeApp(){
     console.log('Initializing App...');
-
-    
-
-    
-    
+    var forwardDiv = $('#forward-loop');
+    for (var i=0; i<numbers.length; i++){
+        forwardDiv.append(numbers[i] + " ");
+    }
+    var reverseDiv = $('#reverse-loop');
+    for (var x = numbers.length-1; x>=0; x--){
+        reverseDiv.append(numbers[x]+" ");
+    }
     // Keep these at the bottom of initializeApp
     displayStudentData();
     buildGameBoard();
@@ -27,18 +30,44 @@ function initializeApp(){
 }
 
 function displayStudentData(){
-    
+    var totalGrade=0;
+    var studentCount=0;
+    for (var key in students) {
+        studentCount++;
+        totalGrade += students[key].grade;
+    }
+    avgGrade = totalGrade/studentCount;
+    $('#student-count').text(studentCount);
+    $('#student-average').text(avgGrade.toFixed(2))
 }
 
 function buildGameBoard(){
     var boardSize = { rows: 8, squares: 8 };
     var gameBoard = $('#game-board');
-
-    
+    for (var i = 0; i<boardSize.rows;i++){
+        var rowevenDiv = $('<div class="row">');
+        if (i%2 === 0){
+            for (var k = 0; k<boardSize.squares/2;k++){
+                var lightSquare = $('<div class="square light">');
+                var darkSquare = $('<div class="square dark">');
+                rowevenDiv.append(lightSquare);
+                rowevenDiv.append(darkSquare);
+            }
+        } else {
+            for (var j = 0; j < boardSize.squares / 2; j++) {
+                var lightSquare = $('<div class="square light">');
+                var darkSquare = $('<div class="square dark">');
+                rowevenDiv.append(darkSquare);
+                rowevenDiv.append(lightSquare);
+            }
+        }
+        gameBoard.append(rowevenDiv);
+    }
 }
 
+
 function bubbleSort(dataArray){
-    
+
 }
 
 function populateNumbers(numArr){
