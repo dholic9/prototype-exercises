@@ -16,10 +16,10 @@ var students = {
 function initializeApp(){
     console.log('Initializing App...');
 
-    
 
-    
-    
+
+
+
     // Keep these at the bottom of initializeApp
     displayStudentData();
     buildGameBoard();
@@ -27,18 +27,18 @@ function initializeApp(){
 }
 
 function displayStudentData(){
-    
+
 }
 
 function buildGameBoard(){
     var boardSize = { rows: 8, squares: 8 };
     var gameBoard = $('#game-board');
 
-    
+
 }
 
 function bubbleSort(dataArray){
-    
+
 }
 
 function populateNumbers(numArr){
