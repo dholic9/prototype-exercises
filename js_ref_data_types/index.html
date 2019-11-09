@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>JS | Reference Data Types</title>
+  <script src="main.js"></script>
+  <script>
+    var student_array = [
+      'Bob',
+      'Stacy',
+      'Ian',
+      'Heather',
+      'George',
+      'Marcy'
+    ];
+    console.log('The third student in the array is:', student_array[2]);
+    console.log('FUll Student Array:', student_array);
+    console.log('There are '+student_array.length+ 'students in the student_array');
+    student_array.push('Fred');
+    student_array.unshift('Nancy');
+    console.log('Full Student Array:', student_array);
+    console.log('There are ' + student_array.length + 'students in the student_array');
+
+    var student = {};
+    student.firstName = 'David';
+    student.lastName = 'Hong';
+    student.age = 27;
+    student.school = 'LearningFuze';
+    student.questionQueu = [];
+    student.hasQuestion = false;
+
+    student.greeting = function(){
+      return 'Hello, my name is '+student.firstName;
+    }
+
+    student.aboutMe = function(){
+      return 'My full name is '+student.firstName+ " "+ student.lastName+", I am "+ student.age+" years old and I am a student at "+this.school;
+    }
+
+    student.askQuestion = function (question){
+      student.questionQueu.push(question);
+      student.hasQuestion = true;
+      return "A question has been added to your queue";
+    }
+
+    student.answerQuestion = function (){
+        if(student.hasQuestion ==true ){
+          var currentQuestion = student.questionQueu.pop();
+          if (!student.questionQueu){
+            student.hasQuestion = false;
+          }
+          return currentQuestion;
+        } else {
+          return 'there are no more questions'
+        }
+    }
+
+
+    console.log('greeting', student.greeting());
+    console.log('aboutme', student.aboutMe());
+    console.log('answerquestion', student.answerQuestion());
+    console.log('askQuestion', student.askQuestion('wut?'));
+    console.log('askQuestion', student.askQuestion('why?'));
+    console.log('askQuestion', student.askQuestion('why not?'));
+    console.log('answerQuestion', student.answerQuestion());
+    console.log('answerQuestion', student.answerQuestion());
+    console.log('answerQuestion', student.answerQuestion());
+    console.log('answerQuestion', student.answerQuestion());
+
+
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>
