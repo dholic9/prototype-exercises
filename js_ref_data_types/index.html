@@ -42,18 +42,18 @@
       return "A question has been added to your queue";
     }
 
-    debugger;
+
     student.answerQuestion = function (){
-        if(student.hasQuestion ==true ){
+        if(student.hasQuestion === true ){
           var currentQuestion = student.questionQueue.pop();
-          if (!student.questionQueue){
+          if (student.questionQueue == 0){
             student.hasQuestion = false;
           }
           return currentQuestion;
         } else {
-          return 'there are no more questions'
+          return 'You have no questions in your queue'
         }
-    }
+      }
 
 
     console.log('greeting', student.greeting());
