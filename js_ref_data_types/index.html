@@ -25,7 +25,7 @@
     student.lastName = 'Hong';
     student.age = 27;
     student.school = 'LearningFuze';
-    student.questionQueu = [];
+    student.questionQueue = [];
     student.hasQuestion = false;
 
     student.greeting = function(){
@@ -37,15 +37,16 @@
     }
 
     student.askQuestion = function (question){
-      student.questionQueu.push(question);
+      student.questionQueue.push(question);
       student.hasQuestion = true;
       return "A question has been added to your queue";
     }
 
+    debugger;
     student.answerQuestion = function (){
         if(student.hasQuestion ==true ){
-          var currentQuestion = student.questionQueu.pop();
-          if (!student.questionQueu){
+          var currentQuestion = student.questionQueue.pop();
+          if (!student.questionQueue){
             student.hasQuestion = false;
           }
           return currentQuestion;
