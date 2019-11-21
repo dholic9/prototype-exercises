@@ -58,16 +58,33 @@
 *     - Returns the value stored in the this.random property.
 */
 class RandomGenerator{
-	constructor(){
+	constructor(minimum, maximum){
+		this.min = minimum;
+		this.max = maximum;
+		this.random = null;
+
+		if(!minimum){
+			this.min = 1;
+		}
+		if(!maximum){
+			this.max = 10;
+		}
 
 	}
+
 	getRange(){
-
+		var range = {
+			'min': this.min,
+			'max': this.max,
+		}
+		return range;
 	}
+
 	generate(){
+		this.random = Math.round(Math.random() * (this.max - this.min)) + this.min;
 
 	}
 	getNum(){
-
+		return this.random;
 	}
 }

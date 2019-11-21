@@ -66,16 +66,39 @@
 
 class Account{
 	constructor(){
+		this.amount = 0;
 
 	}
 
-	add(){
-
+	add(amountToAdd){
+		if(typeof amountToAdd === "number" && amountToAdd > 0){
+			this.amount += amountToAdd;
+		} else{
+			return false;
+		}
+		return this.amount;
 	}
+
 	getAmount(){
-
+		return this.amount;
 	}
-	remove(){
+
+	remove(amountToRemove){
+		if(typeof amountToRemove === "number" && amountToRemove>0){
+			if( amountToRemove > this.amount){
+				amountToRemove = this.amount;
+				this.amount -= amountToRemove;
+				return amountToRemove;
+			} else {
+				this.amount -= amountToRemove;
+				return amountToRemove;
+			}
+
+		} else {
+			return false;
+		}
+
+
 
 	}
 

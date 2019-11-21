@@ -74,15 +74,54 @@
 */
 class Calculator{
 	constructor(){
-
+		this.operator = null;
+		this.numbers = [];
 	}
-	loadNumber(){
 
+	loadNumber(newNumber){
+		if(typeof newNumber !== "number"){
+			return false;
+		}
+		if(this.numbers.length > 1){
+			return false;
+		}
+		this.numbers.push(newNumber);
+		return this.numbers.length;
 	}
-	loadOperator(){
 
+	//if(!isNaN(number) && parseFloat(number) === number && this.calculation.length<2){
+		// this.calculation.push(number);
+		// return this.calculation.length;
+		// }
+		// else{
+			// return false;
+			// }
+	}
+	loadOperator(operator){
+		if(operator === "+" || operator ==="-" || operator==="*" || operator==="/"){
+			this.operator = operator;
+			return true
+		} else {
+			return false;
+		}
 	}
 	calculate(){
-
+		switch (this.operator) {
+			case "+":
+				this.result = this.numbers[0] + this.numbers[this.numbers.length-1];
+				break;
+			case "-":
+				this.result = this.numbers[0] - this.numbers[this.numbers.length-1];
+				break;
+			case "/":
+				this.result = this.numbers[0] / this.numbers[this.numbers.length-1];
+				break;
+			case "x":
+			case "X":
+			case "*":
+				this.result = this.numbers[0] * this.numbers[this.numbers.length-1];
+		}
+		this.numbers = [];
+		return result;
 	}
 }

@@ -128,20 +128,44 @@
 *   - Where will you get the new value for the account you removed money from?
 *   - What account methods would be helpful in this method?
 */
+
+
+// var variableefejw = new Bank ("Goliath")
 class Bank{
-	constructor(){
-
+	constructor(bankName){
+		this.bankname = bankName;
+		this.accounts = {};
 	}
-	makeAccount(){
-
+	makeAccount(accountNumber){
+		if(this.accounts.hasOwnProperty(accountNumber)){
+			return false;
+		} else {
+			this.accounts[accountNumber] = new Account();
+			console.log(this)
+			return this.accounts[accountNumber]
+		}
 	}
-	checkForAccount(){
 
+	checkForAccount(accountNumber){
+		if(this.accounts.hasOwnProperty(accountNumber)){
+			return true;
+		} else {
+			return false;
+		}
 	}
-	removeAccount(){
-
+	removeAccount(accountNumber){
+		if(this.checkForAccount(accountNumber)){
+			if(this.accounts.accountNumber[amount] > 0){
+				return 'account is not empty'
+			}else {
+				delete this.accounts[accountNumber];
+				return "account ["+accountNumber+"] deleted."
+			}
+		} else {
+			return "account "+accountNumber+" does not exist"
+		}
 	}
-	deposit( ){
+	deposit(accountNumber, amount){
 
 	}
 	withdraw(){
