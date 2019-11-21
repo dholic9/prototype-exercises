@@ -73,10 +73,11 @@ class Account{
 	add(amountToAdd){
 		if(typeof amountToAdd === "number" && amountToAdd > 0){
 			this.amount += amountToAdd;
-		} else{
+			return this.amount;
+		}
+		else {
 			return false;
 		}
-		return this.amount;
 	}
 
 	getAmount(){
@@ -84,21 +85,34 @@ class Account{
 	}
 
 	remove(amountToRemove){
-		if(typeof amountToRemove === "number" && amountToRemove>0){
+		if(amountToRemove>0){
 			if( amountToRemove > this.amount){
 				amountToRemove = this.amount;
 				this.amount -= amountToRemove;
 				return amountToRemove;
-			} else {
+			}
+			else {
 				this.amount -= amountToRemove;
 				return amountToRemove;
 			}
-
 		} else {
 			return false;
 		}
 
-
+	// if(amountToRemove>0){
+	// 		if (amountToRemove<= this.amount){
+	// 			this.amount -= amountToRemove;
+	// 			return amountToRemove;
+	// 		}
+	// 		else if(amountToRemove>this.amount){
+	// 			amountToRemove = this.amount;
+	// 			this.amount -= amountToRemove;
+	// 			return amountToRemove;
+	// 		}
+	// 	}
+	// 	else {
+	// 		return false
+	// 	}
 
 	}
 

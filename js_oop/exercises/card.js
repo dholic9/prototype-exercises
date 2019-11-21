@@ -40,8 +40,9 @@
 *   - Why is it useful for the Cards to have this method?
 */
 class Card{
-	constructor(){
-
+	constructor(suit, faceValue) {
+		this.suit = suit;
+		this.faceValue = faceValue;
 	}
 	getSuit(){
 
@@ -132,16 +133,22 @@ class Card{
 */
 class Deck{
 	constructor(){
-
+		this.cards = []
 	}
-	addCard(){
-
+	addCard(suit, faceValue){
+		var card = new Card(suit, faceValue);
+		this.cards.push(card);
+		return this.cards.length;
 	}
 	getCardCount(){
-
+		return this.cards.length;
 	}
-	dealCards(){
+	dealCards(numberOfCards){
+		var cardsToDeal = [];
 
+		// if (numberOfCards <= this.cards.length){
+		// 	for ()
+		// }
 	}
 	shuffle(){
 

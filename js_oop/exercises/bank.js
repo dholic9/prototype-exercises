@@ -137,11 +137,10 @@ class Bank{
 		this.accounts = {};
 	}
 	makeAccount(accountNumber){
-		if(this.accounts.hasOwnProperty(accountNumber)){
+		if(this.checkForAccount(accountNumber)){
 			return false;
 		} else {
 			this.accounts[accountNumber] = new Account();
-			console.log(this)
 			return this.accounts[accountNumber]
 		}
 	}
