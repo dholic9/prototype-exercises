@@ -91,26 +91,33 @@
 */
 
 class CounterCallback{
-    constructor( ){
-
+    constructor(number, callback){
+        this.value = number;
+        this.domElement = null;
+        this.callback = callback;
+        this.handleClick = this.handleClick.bind(this);
     }
     getValue( ){
-
+        return this.value;
     }
     render( ){
-
+        this.domElement = $("<div>").addClass('counter');
+        this.update();
+        return this.domElement;
     }
     addClickHandler( ){
-
+        $(this.domElement).on('click', this.handleClick);
     }
     update( ){
-
+        $(this.domElement).text(this.value);
     }
     increment( ){
-
+        this.value++;
+        this.update();
     }
     handleClick( ){
-
+        this.callback(this);
+        $(this.domElement).on('click', this.increment());
     }
 
 }

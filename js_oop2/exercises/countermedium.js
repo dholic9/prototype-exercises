@@ -83,23 +83,28 @@
 
 
 class CounterMedium{
-    constructor(  ){
-
+    constructor(number){
+        this.value = number;
+        this.domElement = null;
+        this.handleClick = this.handleClick.bind(this);
     }
     render( ){
-
+        this.domElement = $('<div>').addClass('counter');
+        this.update();
+        return this.domElement;
     }
     addClickHandler( ){
-
+        $(this.domElement).on('click', this.handleClick);
     }
     update( ){
-
+        $(this.domElement).text(this.value);
     }
     increment( ){
-
+        this.value++;
+        this.update();
     }
     handleClick( ){
-
+        $(this.domElement).on('click', this.increment());
     }
 
 }

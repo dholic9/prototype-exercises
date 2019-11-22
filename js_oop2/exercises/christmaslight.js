@@ -75,20 +75,29 @@
 */
 
 class ChristmasLight{
-    constructor(  ){
-
+    constructor(colorArray){
+        this.colorArray = colorArray;
+        this.domElement = null;
+        this.currentcolor = 0;
+        this.handleClick = this.handleClick.bind(this);
     }
     render( ){
-
+        this.domElement = $("<div>").addClass('christmasLight').on('click', this.handleClick);
+        this.displayColor();
+            return this.domElement;
     }
     displayColor( ){
-
+        $(this.domElement).css('background-color', this.colorArray[this.currentcolor]);
     }
     cycleColor( ){
-
+        this.currentcolor++
+        if(this.currentcolor === this.colorArray.length){
+            this.currentcolor = 0;
+        }
+        this.displayColor();
     }
     handleClick( ){
-
+        this.cycleColor();
     }
 
 }

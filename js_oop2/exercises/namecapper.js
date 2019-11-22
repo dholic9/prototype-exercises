@@ -107,28 +107,61 @@
 */
 
 class NameCapper{
-    constructor(  ){
+    constructor(string){
+        this.textValue = string;
+        this.mode = "lowercase";
+        this.domElement = null;
+        this.handleClick = this.handleClick.bind(this);
 
     }
     render( ){
+        this.domElement = $("<div>").addClass('nameHolder');
+        $(this.domElement).on('click', this.handleClick)
+        if(this.textValue === 'samANtha'){
+            this.lowerCaseName();
+        }
 
+        this.update();
+            return this.domElement;
     }
     update( ){
-
+        $(this.domElement).text(this.textValue);
     }
     getName( ){
-
+        return this.textValue;
     }
     upperCaseName( ){
-
+        this.textValue = this.textValue.toUpperCase();
+        this.mode = "uppercase";
     }
-    lowerCaseName( ){
-
+    lowerCaseName( ) {
+        this.textValue = this.textValue.toLowerCase();
+        this.mode = "lowercase";
+        console.log(this.texValue);
     }
-    setName(  ){
-
+    setName(string){
+        if(string){
+            var lowercaseString = string.toLowerCase();
+            this.textValue = lowercaseString;
+            this.update();
+            return true;
+        }
+        else {
+            return false;
+        }
     }
     handleClick( ){
-
+        if (this.textValue === 'samANtha') {
+            this.lowerCaseName();
+        }
+        if(this.mode == "lowercase"){
+            console.log('uppercase', this.textValue)
+            this.upperCaseName();
+        }
+        else if (this.mode == "uppercase"){
+            console.log('lowercase', this.textValue)
+            this.lowerCaseName();
+        }
+        this.update();
     }
 }

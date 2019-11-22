@@ -79,20 +79,25 @@
 */
 
 class CounterBasic{
-    constructor( ){
-
+    constructor(number, domElem){
+        this.number = number;
+        this.domElement = domElem;
+        this.handleClick = this.handleClick.bind(this);
+        this.addClickHandler();
+        this.update();
     }
-    addClickHandler( ){
-
+    addClickHandler(){
+        $(this.domElement).on("click", this.handleClick);
     }
     update( ){
-
+        $(this.domElement).text(this.number);
     }
     increment( ){
-
+        this.number++;
+        this.update();
     }
     handleClick( ){
-
+        $(this.domElement).on("click", this.increment());
     }
 
 }
