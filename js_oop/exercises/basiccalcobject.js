@@ -96,11 +96,11 @@ class Calculator{
 		// else{
 			// return false;
 			// }
-	}
+
 	loadOperator(operator){
 		if(operator === "+" || operator ==="-" || operator==="*" || operator==="/"){
 			this.operator = operator;
-			return true
+			return true;
 		} else {
 			return false;
 		}

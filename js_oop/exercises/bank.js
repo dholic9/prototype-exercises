@@ -154,7 +154,7 @@ class Bank{
 	}
 	removeAccount(accountNumber){
 		if(this.checkForAccount(accountNumber)){
-			if(this.accounts.accountNumber[amount] > 0){
+			if(this.accounts.accountNumber[this.amount] > 0){
 				return 'account is not empty'
 			}else {
 				delete this.accounts[accountNumber];
@@ -165,7 +165,12 @@ class Bank{
 		}
 	}
 	deposit(accountNumber, amount){
-
+		if(!this.accounts.accountNumber){
+			return "account does not exist";
+		} else{
+			this.account.add(this.amount);
+			return "account "+this.accountNumber+" now has "+this.accounts.accountNumber.amount+".";
+		}
 	}
 	withdraw(){
 
