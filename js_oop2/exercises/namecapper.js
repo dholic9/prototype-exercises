@@ -108,7 +108,7 @@
 
 class NameCapper{
     constructor(string){
-        this.textValue = string;
+        this.textValue = string.toLowerCase();
         this.mode = "lowercase";
         this.domElement = null;
         this.handleClick = this.handleClick.bind(this);
@@ -117,10 +117,6 @@ class NameCapper{
     render( ){
         this.domElement = $("<div>").addClass('nameHolder');
         $(this.domElement).on('click', this.handleClick)
-        if(this.textValue === 'samANtha'){
-            this.lowerCaseName();
-        }
-
         this.update();
             return this.domElement;
     }
