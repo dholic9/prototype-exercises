@@ -93,7 +93,7 @@
 
 /*
 **	deposit **
-* This method will:
+* This method will
 * 	- Deposit money into an existing account.
 ** Specifications **
 *   - Takes two parameters.
@@ -153,12 +153,12 @@ class Bank{
 		}
 	}
 	removeAccount(accountNumber){
-		if(this.checkForAccount(accountNumber)){
-			if(this.accounts.accountNumber > 0){
+		if(this.checkForAccount(this.accounts[accountNumber])){
+			if(this.accounts.accountNumber.amount > 0){
 				return 'account is not empty'
 			}else {
 				delete this.accounts[accountNumber];
-				return "account "+this.accounts.accountNumber+" deleted."
+				return "account "+this.accounts[accountNumber]+" deleted."
 			}
 		} else {
 			return "account "+accountNumber+" does not exist"
