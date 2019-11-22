@@ -64,7 +64,7 @@ class RandomGenerator{
 		this.random = null;
 
 		if(!minimum){
-			this.min = 1;
+			this.min = 0;
 		}
 		if(!maximum){
 			this.max = 10;
