@@ -154,11 +154,11 @@ class Bank{
 	}
 	removeAccount(accountNumber){
 		if(this.checkForAccount(accountNumber)){
-			if(this.accounts.accountNumber[this.amount] > 0){
+			if(this.accounts.accountNumber > 0){
 				return 'account is not empty'
 			}else {
 				delete this.accounts[accountNumber];
-				return "account ["+accountNumber+"] deleted."
+				return "account "+this.accounts.accountNumber+" deleted."
 			}
 		} else {
 			return "account "+accountNumber+" does not exist"

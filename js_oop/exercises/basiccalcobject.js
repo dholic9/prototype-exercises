@@ -122,6 +122,6 @@ class Calculator{
 				this.result = this.numbers[0] * this.numbers[this.numbers.length-1];
 		}
 		this.numbers = [];
-		return result;
+		return this.result;
 	}
 }
