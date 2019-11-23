@@ -1,5 +1,3 @@
-//JS-Docs for the "ColorSquare" class methods
-
 /*
 **	constructor **
 * The constructor will:
@@ -24,7 +22,6 @@
 *   - Why do you think the constructor is storing references to other instantiated objects?
 *   - Why do you have to bind "this" for methods that are called by event handlers?
 */
-
 /*
 **	render **
 * This method will:
@@ -41,7 +38,6 @@
 *  - What properties in the constructor contain the color array and the color index?
 *  - Where is the CSS class you need to use stored?
 */
-
 /*
 **	set neighbor **
 * Read the documentation on Getters and Setters!!!: https://www.w3schools.com/js/js_object_accessors.asp
@@ -61,7 +57,6 @@
 *  - What is the advantage of using a getter/setter rather than a regular method?
 *  - Where should you store the value contained in the neighborObject parameter?
 */
-
 /*
 **	get neighbor **
 * Worth looking at again!!! : https://www.w3schools.com/js/js_object_accessors.asp
@@ -72,7 +67,6 @@
 ** Considerations **
 *   - Where is the neighbor stored?
 */
-
 /*
 **	handleClick **
 * This method will:
@@ -95,7 +89,6 @@
 *     - Example of binding this for a method in the constructor:
 *       - this.functionName = this.functionName.bind(this);
 */
-
 /*
 **	changeColor **
 * This method will:
@@ -111,27 +104,54 @@
 
 class ColorSquare{
 
-	constructor( ){
+	constructor(colors, currentColor, colorClass){
+		this.availableColors = colors;
+		this.colorIndex = currentColor;
+		this.colorClass = colorClass;
+		this.element = null;
+		this.rightNeighbor = null;
+		this.handleClick = this.handleClick.bind(this);
 	}
 
 	render(){
-
+		this.element = $('<div>');
+		this.element.addClass(this.colorClass);
+		this.element.on('click', this.handleClick);
+		this.element.css('background-color', this.availableColors[this.colorIndex]);
+		return this.element;
 	}
 
-	set neighbor(){
-
+	set neighbor(neighborObject){
+		if(neighborObject instanceof ColorSquare){
+			this.rightNeighbor = neighborObject;
+				return true;
+		} else {
+				return false;
+		}
 	}
 
 	get neighbor(){
-
+		return this.rightNeighbor
 	}
 
 	handleClick(){
 
+		if(this.colorIndex < $(this.availableColors).length-1){
+			this.colorIndex++;
+			this.element.css('background-color', this.availableColors[this.colorIndex]);
+		} else {
+				this.colorIndex = 0;
+			this.element.css('background-color', this.availableColors[this.colorIndex]);
+		}
+
+		if(this.rightNeighbor){
+			this.rightNeighbor.handleClick();
+		}
+
 	}
 
-	changeColor(  ){
-
+	changeColor(newColor){
+		this.element.css('background-color', this.availableColors[newColor]);
 	}
 
 }

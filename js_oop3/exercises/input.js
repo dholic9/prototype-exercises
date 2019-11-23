@@ -23,13 +23,15 @@
 *   - What is regex?
 *   - Why do you think the properties above are included in the constructor?
 */
+// regex pattern /[A-Z]+/
+
 
 /*
 **	setPattern **
 * This method will:
 * 	- Assigns the received test pattern to its associated property in the constructor.
 ** Specifications **
-*   - Takes no parameters:
+*   - Takes the regex pattern:
 */
 
 /*
@@ -53,12 +55,13 @@
 */
 
 /*
-**	setRange **
+**	getRange **
 * This method will:
 * 	- return the values contained in the this.range property.
 ** Specifications **
 *   - Takes no parameters:
 */
+//
 
 /*
 **	test **
@@ -86,6 +89,13 @@
 *    - Note: documentation https://www.w3schools.com/jsref/jsref_regexp_test.asp
 *  - How can you quickly tell if the range has been previously set?
 */
+// if true result should be true ; or fase;
+// setting test for range and pattern
+// pattern and then range
+// separate tests
+// check if have range then check if within range
+// output {result: false,
+// 				 error: pattern}
 
 /*
 **	showError **
@@ -111,6 +121,7 @@
 *  - How do you find the parent of an element?
 *    - Note: documentation https://www.w3schools.com/jquery/traversing_parent.asp
 */
+//
 
 /*
 **	hideError **
@@ -124,35 +135,123 @@
 */
 class Input{
 
-	constructor( ){
+	constructor(targetInputElement){
+
+		this.inputElement = $(targetInputElement);
+		this.errorElement = null;
+		this.range = {
+			min: null,
+			max: null
+		};
+		this.pattern = "";
+		this.errorMessage = "";
 
 	}
 
-	setPattern(  ){
-
+	setPattern(patt){
+		this.pattern = patt;
 	}
 
 	getPattern(){
-
+		return this.pattern;
 	}
 
-	setRange(  ){
+	setRange(min, max){
 
+
+		this.range.min = min;
+		this.range.max = max;
 	}
 
 	getRange(){
-
+		return this.range;
 	}
+
 
 	test(){
 
-	}
+		var inputValue = this.inputElement.val();
 
-	showError(  ){
+		if(!this.range.min){
+			if (this.pattern.test(inputValue)){
+				return {
+					result: true
+				}
+			} else {
+				return{
+					result: false,
+					error: "pattern"
+				}
+			}
+		} else if (inputValue > this.range.min && inputValue < this.range.max){
+				return{
+					result: true
+				}
+		} else {
+			return{
+				result: false,
+				error: "range"
+			}
+		}
 
+
+
+
+		// if (this.pattern.test(inputValue)){
+
+		// 	if (inputValue > this.range.min && inputValue < this.range.max){
+		// 		return {
+		// 			result: true
+		// 		}
+		// 	} else{
+		// 		return {
+		// 			result: false,
+		// 			error: "range"
+		// 		}
+		// 	}
+		// } else{
+		// 	return{
+		// 		result: false,
+		// 		error: "pattern"
+		// 	}
+		// }
+
+		// if (inputValue > this.range.min && inputValue < this.range.max){
+		// 	if (this.pattern.test(inputValue)){
+		// 		return {result: true};
+		// 	} else {
+		// 		return {
+		// 			result: false,
+		// 			error: "pattern"
+		// 		}
+		// 	}
+		// } else {
+		// 	return {
+		// 		result: false,
+		// 		error: "range"
+		// 	}
+		// }
+
+		}
+
+
+	showError(message){
+		var elemPosition = this.inputElement.position();
+		var height = this.inputElement.height();
+
+
+
+
+		this.errorElement = $("<div>").addClass("inputError").text(message)
+		this.errorElement.css("left", elemPosition.left);
+		this.errorElement.css("top", (elemPosition.top + height));
+
+		var parentElement = $(this.inputElement).parent();
+		parentElement.append(this.errorElement);
 	}
 
 	hideError(){
-
+		this.errorElement.remove();
+		this.errorElement = null;
 	}
 }

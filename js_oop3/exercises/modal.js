@@ -21,6 +21,7 @@
 ** Considerations **
 *   - Why does the modal need access to DOM element references?
 */
+//
 
 /*
 **	init **
@@ -36,6 +37,9 @@
 ** Considerations **
 *   - Why does the "hide" callback need to have "this" bound?
 */
+// this.hide();
+//
+//
 
 /*
 **	show **
@@ -46,7 +50,7 @@
 ** Considerations **
 *   - How can the .show() method be used on the correct DOM elements?
 */
-
+//
 
 /*
 **	updateContents **
@@ -58,6 +62,7 @@
 ** Considerations **
 *   - What jQuery method is useful for setting the text in elements?
 */
+//.text()
 
 /*
 **	hide **
@@ -71,26 +76,36 @@
 
 
 
+
 class Modal{
 
-	constructor( ){
-
+	constructor(shadowElement, bodyElement, messageElement){
+		this.shadow = $(shadowElement);
+		this.body = $(bodyElement);
+		this.message = $(messageElement);
+		this.onClose = null;
+		this.hide = this.hide.bind(this);
 	}
 
 	init(){
-
+		this.hide();
+		this.shadow.off('click');
+		this.shadow.on('click', this.onClose);
+		this.shadow.on('click', this.hide);
 	}
 
 	show(){
-
+		this.shadow.show();
+		this.body.show();
 	}
 
-	updateContents(){
-
+	updateContents(modalMessage){
+		this.message.text(modalMessage);
 	}
 
 	hide(){
-
+		this.shadow.hide();
+		this.body.hide();
 	}
 
 }
