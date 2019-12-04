@@ -7,6 +7,7 @@ function initializeApp(){
     // $('.list-group button').click(addDot);
     $('#add-btn').click(addButtonToList);
     $('.list-group').on('click', 'button', addDot);
+    console.log(event)
 }
 
 
@@ -22,4 +23,5 @@ function addButtonToList(){
     var number = $('.list-group-item').length + 1;
     var newListItem = $('<li class="list-group-item"><button class="btn btn-outline-info">Button #' + number + '</button><div class="dot-container"></div></li>');
     $('.list-group').append(newListItem);
+    console.log(event);
 }
